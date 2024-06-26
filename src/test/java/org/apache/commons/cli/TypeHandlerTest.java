@@ -41,7 +41,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -237,12 +236,6 @@ public class TypeHandlerTest {
         assertEquals(new Instantiable(), new Instantiable());
     }
 
-    @Test
-    public void testOpenFile() throws ParseException, IOException {
-        try (FileInputStream fis = TypeHandler.openFile("src/test/resources/org/apache/commons/cli/existing-readable.file")) {
-            IOUtils.consume(fis);
-        }
-    }
 
     @Test
     public void testRegister() {
